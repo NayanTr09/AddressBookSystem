@@ -115,4 +115,27 @@ mysql> select * from addressbook;
 +-----------+----------+-----------------+----------+--------+--------------+---------------------------+
 2 rows in set (0.00 sec)
 
+mysql> select * from addressbook;
++-----------+----------+-----------------+----------+--------+--------------+---------------------+
+| FirstName | LastName | Address         | City     | Zip    | Phone_Number | Email               |
++-----------+----------+-----------------+----------+--------+--------------+---------------------+
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi | 110085 |   7303961042 | adnansyed@gmail.com |
+| Adnan     | Syed     | WhiteHouse Appt | NewDelhi | 110085 |   7838848786 | adnansyed@gmail.com |
++-----------+----------+-----------------+----------+--------+--------------+---------------------+
+2 rows in set (0.03 sec)
+
+mysql> update addressbook
+    -> set Email = 'nayantripathi42@gmail.com' where FirstName = 'Nayan';
+Query OK, 1 row affected (0.26 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+| FirstName | LastName | Address         | City     | Zip    | Phone_Number | Email                     |
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi | 110085 |   7303961042 | nayantripathi42@gmail.com |
+| Adnan     | Syed     | WhiteHouse Appt | NewDelhi | 110085 |   7838848786 | adnansyed@gmail.com       |
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+2 rows in set (0.00 sec)
+
 mysql>
