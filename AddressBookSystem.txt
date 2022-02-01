@@ -51,4 +51,68 @@ mysql> Describe Addressbook;
 +--------------+--------------+------+-----+---------+-------+
 7 rows in set (0.12 sec)
 
+mysql> create table AddressBook
+    -> (
+    -> FirstName varchar(50) NOT NULL,
+    -> LastName varchar(50) NOT NULL,
+    -> Address varchar(200) NOT NULL,
+    -> City varchar(50) NOT NULL,
+    -> Zip INT unsigned NOT NULL,
+    -> Phone_Number INT unsigned NOT NULL,
+    -> Email varchar(100) NOT NULL
+    -> );
+Query OK, 0 rows affected (2.15 sec)
+
+mysql> Describe Addressbook;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| FirstName    | varchar(50)  | NO   |     | NULL    |       |
+| LastName     | varchar(50)  | NO   |     | NULL    |       |
+| Address      | varchar(200) | NO   |     | NULL    |       |
+| City         | varchar(50)  | NO   |     | NULL    |       |
+| Zip          | int unsigned | NO   |     | NULL    |       |
+| Phone_Number | int unsigned | NO   |     | NULL    |       |
+| Email        | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+7 rows in set (0.12 sec)
+
+
+mysql> alter table addressbook
+    -> modify Phone_Number bigint;
+Query OK, 0 rows affected (2.40 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook;
+Empty set (0.11 sec)
+
+mysql> Describe addressbook;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| FirstName    | varchar(50)  | NO   |     | NULL    |       |
+| LastName     | varchar(50)  | NO   |     | NULL    |       |
+| Address      | varchar(200) | NO   |     | NULL    |       |
+| City         | varchar(50)  | NO   |     | NULL    |       |
+| Zip          | int unsigned | NO   |     | NULL    |       |
+| Phone_Number | bigint       | YES  |     | NULL    |       |
+| Email        | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+7 rows in set (0.17 sec)
+
+mysql> Insert into Addressbook (FirstName, LastName, Address, City, Zip, Phone_Number, Email ) Values
+    -> ( 'Nayan', 'Tripathi', 'WhiteHouse Appt', 'NewDelhi', 110085, 7303961042, 'nayantripathi42@gmail.com' ),
+    -> ('Adnan', 'Syed', 'WhiteHouse Appt', 'NewDelhi', 110085, 7838848786, 'adnan@gmail.com' );
+Query OK, 2 rows affected (0.24 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+| FirstName | LastName | Address         | City     | Zip    | Phone_Number | Email                     |
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi | 110085 |   7303961042 | nayantripathi42@gmail.com |
+| Adnan     | Syed     | WhiteHouse Appt | NewDelhi | 110085 |   7838848786 | adnan@gmail.com           |
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+2 rows in set (0.00 sec)
+
 mysql>
