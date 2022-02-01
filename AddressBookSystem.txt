@@ -149,4 +149,10 @@ mysql> Select * from addressbook;
 +-----------+----------+-----------------+----------+--------+--------------+---------------------------+
 1 row in set (0.14 sec)
 
-mysql>
+mysql> select FirstName from addressbook where city = 'NewDelhi' or Email = 'nayantripathi42@gmail.com';
++-----------+
+| FirstName |
++-----------+
+| Nayan     |
++-----------+
+1 row in set (0.00 sec)
