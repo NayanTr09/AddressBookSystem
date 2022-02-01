@@ -177,3 +177,31 @@ mysql> select * from addressbook order by FirstName asc;
 | Nayan     | Tripathi | WhiteHouse Appt | NewDelhi  | 110085 |   7303961042 | nayantripathi42@gmail.com |
 +-----------+----------+-----------------+-----------+--------+--------------+---------------------------+
 2 rows in set (0.10 sec)
+
+mysql> alter table addressbook
+    -> add Type varchar(50);
+Query OK, 0 rows affected (2.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+------+
+| FirstName | LastName | Address         | City      | Zip    | Phone_Number | Email                     | Type |
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+------+
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi  | 110085 |   7303961042 | nayantripathi42@gmail.com | NULL |
+| Adnan     | Syed     | WhiteHouse Appt | New Delhi | 111085 |   7838848786 | adnan@gmail.com           | NULL |
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+------+
+2 rows in set (0.00 sec)
+
+mysql> update addressbook
+    -> set Type = 'Friends' where FirstName = 'Nayan' or FirstName = 'Adnan';
+Query OK, 2 rows affected (0.18 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+---------+
+| FirstName | LastName | Address         | City      | Zip    | Phone_Number | Email                     | Type    |
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+---------+
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi  | 110085 |   7303961042 | nayantripathi42@gmail.com | Friends |
+| Adnan     | Syed     | WhiteHouse Appt | New Delhi | 111085 |   7838848786 | adnan@gmail.com           | Friends |
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+---------+
+2 rows in set (0.10 sec)
