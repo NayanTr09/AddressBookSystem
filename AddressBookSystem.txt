@@ -156,3 +156,15 @@ mysql> select FirstName from addressbook where city = 'NewDelhi' or Email = 'nay
 | Nayan     |
 +-----------+
 1 row in set (0.00 sec)
+
+mysql> Insert into Addressbook ( FirstName, LastName, Address, City, Zip, Phone_Number, Email ) values
+    -> ( 'Adnan', 'Syed', 'WhiteHouse Appt', 'New Delhi', 111085, 7838848786, 'adnan@gmail.com' );
+Query OK, 1 row affected (0.36 sec)
+
+mysql> select count(*) from addressbook where City = 'NewDelhi' or Email = 'adnan@gmail.com';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.07 sec)
