@@ -25,4 +25,30 @@ mysql> select database();
 +--------------------+
 1 row in set (0.00 sec)
 
+mysql> create table AddressBook
+    -> (
+    -> FirstName varchar(50) NOT NULL,
+    -> LastName varchar(50) NOT NULL,
+    -> Address varchar(200) NOT NULL,
+    -> City varchar(50) NOT NULL,
+    -> Zip INT unsigned NOT NULL,
+    -> Phone_Number INT unsigned NOT NULL,
+    -> Email varchar(100) NOT NULL
+    -> );
+Query OK, 0 rows affected (2.15 sec)
+
+mysql> Describe Addressbook;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| FirstName    | varchar(50)  | NO   |     | NULL    |       |
+| LastName     | varchar(50)  | NO   |     | NULL    |       |
+| Address      | varchar(200) | NO   |     | NULL    |       |
+| City         | varchar(50)  | NO   |     | NULL    |       |
+| Zip          | int unsigned | NO   |     | NULL    |       |
+| Phone_Number | int unsigned | NO   |     | NULL    |       |
+| Email        | varchar(100) | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+7 rows in set (0.12 sec)
+
 mysql>
