@@ -205,3 +205,13 @@ mysql> select * from addressbook;
 | Adnan     | Syed     | WhiteHouse Appt | New Delhi | 111085 |   7838848786 | adnan@gmail.com           | Friends |
 +-----------+----------+-----------------+-----------+--------+--------------+---------------------------+---------+
 2 rows in set (0.10 sec)
+
+mysql> select count(*) from addressbook where Type = 'Friends';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql>
