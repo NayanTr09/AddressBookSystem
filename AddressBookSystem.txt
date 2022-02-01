@@ -138,4 +138,15 @@ mysql> select * from addressbook;
 +-----------+----------+-----------------+----------+--------+--------------+---------------------------+
 2 rows in set (0.00 sec)
 
+mysql> delete from addressbook where Firstname = 'Adnan';
+Query OK, 1 row affected (0.17 sec)
+
+mysql> Select * from addressbook;
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+| FirstName | LastName | Address         | City     | Zip    | Phone_Number | Email                     |
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi | 110085 |   7303961042 | nayantripathi42@gmail.com |
++-----------+----------+-----------------+----------+--------+--------------+---------------------------+
+1 row in set (0.14 sec)
+
 mysql>
