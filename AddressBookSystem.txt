@@ -168,3 +168,12 @@ mysql> select count(*) from addressbook where City = 'NewDelhi' or Email = 'adna
 |        2 |
 +----------+
 1 row in set (0.07 sec)
+
+mysql> select * from addressbook order by FirstName asc;
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+
+| FirstName | LastName | Address         | City      | Zip    | Phone_Number | Email                     |
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+
+| Adnan     | Syed     | WhiteHouse Appt | New Delhi | 111085 |   7838848786 | adnan@gmail.com           |
+| Nayan     | Tripathi | WhiteHouse Appt | NewDelhi  | 110085 |   7303961042 | nayantripathi42@gmail.com |
++-----------+----------+-----------------+-----------+--------+--------------+---------------------------+
+2 rows in set (0.10 sec)
